@@ -1,4 +1,4 @@
-# TEDxIGDTU — Event Registration Flow (Pure React, no backend)
+# TEDxIGDTU — Event Registration Form
 
 Practical assessment submission for the TEDxIGDTU Web Development team.
 
@@ -27,25 +27,13 @@ actually touch — a Google Form can't stop duplicate submissions or
 validate a phone number format, and it doesn't feel like part of the
 TEDxIGDTU site at all.
 
-## Key decisions
+## Key Technical / Design Decisions
 
-- **No backend, by design for this version.** Everything — validation,
-  duplicate checking, storage — happens in the browser. `src/utils/storage.js`
-  is the one file that touches `localStorage`; every other component just
-  calls its functions, so swapping in a real backend later only means
-  rewriting that one file.
-- **Why `localStorage` and not a real database:** it needed zero setup —
-  no server to run, nothing to deploy separately — which fit the 60-90
-  minute window. The honest trade-off: data only lives in the browser it
-  was entered in. It won't sync across devices, and clearing browser data
-  clears the registrations. For a real production version I'd swap this
-  file for calls to a hosted database (see "what I'd improve" below).
-- **Kept the form logic plain.** One `values` object in state, one
-  `handleChange` for every field, one `validate()` function that returns
-  an errors object — no extra state machines or abstractions, so it's easy
-  to read top to bottom and easy for me to explain any line of it.
-- **Design:** black / red (`#e62b1e`) / off-white, matching TEDx's visual
-  identity, with underline-style inputs instead of boxed cards.
+- **Framework**: React (for component-based UI, fast rendering).  
+- **Styling**: CSS (responsive, minimal design).  
+- **Deployment**: Vercel (easy GitHub integration, fast CI/CD).  
+- **Form Handling**: React state + validation for inputs.  
+- **Future-ready**: Can connect to backend API or database later.
 
 ## Screenshots
 
@@ -55,19 +43,17 @@ _Add screenshots here after running the app locally:_
 
 ## AI tools used
 
-Built with Claude (Anthropic), used for scaffolding the components and
-drafting this README. I reviewed the code and can explain the validation
-rules, the duplicate-check logic, and how `localStorage` is used as the
-storage layer.
+Built with Claude (Anthropic), used for scaffolding the components. I reviewed 
+the code and can explain the validation rules, the duplicate-check logic, and 
+how `localStorage` is used as the storage layer.
 
 ## What I'd improve with more time
 
 - Replace `localStorage` with a real hosted database (Firebase/Supabase or
   a small backend) so registrations are shared across every visitor's
   device, not just the browser they registered from.
-- Add a way to export the organiser view as CSV.
-- Add password protection to the organiser view.
-- Send a confirmation email on successful registration.
+- Add **email confirmation** after registration.  
+- Integrate **payment gateway** for ticketing.  
 
 ## Setup
 
