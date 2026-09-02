@@ -1,0 +1,301 @@
+:root {
+  --red: #e62b1e;
+  --black: #0a0a0a;
+  --cream: #f7f5f2;
+  --grey: #78766f;
+  --line: #d8d5cd;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--black);
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  background: var(--black);
+  color: var(--cream);
+  padding: 4.5rem 1.5rem 3.5rem;
+  text-align: center;
+}
+
+.wordmark {
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  margin-bottom: 2rem;
+}
+
+.wordmark .x-mark {
+  color: var(--red);
+}
+
+.hero h1 {
+  max-width: 640px;
+  margin: 0 auto 0.9rem;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+}
+
+.hero-sub {
+  max-width: 480px;
+  margin: 0 auto;
+  color: #c9c7c0;
+  font-size: 1.05rem;
+  line-height: 1.55;
+}
+
+/* ---------- Content / form ---------- */
+
+.content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 3rem 1.5rem 4rem;
+}
+
+.reg-form {
+  width: 100%;
+  max-width: 560px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  flex: 1;
+}
+
+.field-row {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.field-row .field {
+  min-width: 0;
+}
+
+label,
+.radio-label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--black);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select {
+  border: none;
+  border-bottom: 1.5px solid var(--line);
+  background: transparent;
+  padding: 0.6rem 0.1rem;
+  font-size: 1rem;
+  font-family: inherit;
+  color: var(--black);
+  outline: none;
+}
+
+input::placeholder {
+  color: #b3b0a7;
+}
+
+input:focus,
+select:focus {
+  border-bottom-color: var(--red);
+}
+
+.radio-group {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 0.3rem;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-weight: 500;
+  font-size: 0.96rem;
+  cursor: pointer;
+}
+
+.radio-option input {
+  accent-color: var(--red);
+  width: 16px;
+  height: 16px;
+}
+
+.checkbox-field {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+  color: #3d3c38;
+  line-height: 1.4;
+  cursor: pointer;
+}
+
+.checkbox-field input {
+  accent-color: var(--red);
+  width: 17px;
+  height: 17px;
+  margin-top: 0.1rem;
+  flex-shrink: 0;
+}
+
+.error {
+  color: var(--red);
+  font-size: 0.82rem;
+}
+
+.submit-btn {
+  margin-top: 0.5rem;
+  background: var(--black);
+  color: var(--cream);
+  border: none;
+  padding: 0.95rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background: var(--red);
+}
+
+/* ---------- Confirmation ---------- */
+
+.confirmation {
+  max-width: 480px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.9rem;
+  padding-top: 1.5rem;
+}
+
+.confirmation-mark {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--red);
+  color: var(--cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.confirmation h2 {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+.confirmation p {
+  color: var(--grey);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.link-btn {
+  margin-top: 0.8rem;
+  background: none;
+  border: none;
+  border-bottom: 1.5px solid var(--black);
+  padding: 0.2rem 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.link-btn:hover {
+  border-bottom-color: var(--red);
+  color: var(--red);
+}
+
+/* ---------- Registrations list (organiser view) ---------- */
+
+.list-view {
+  width: 100%;
+  max-width: 720px;
+}
+
+.reg-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.9rem;
+}
+
+.reg-table th,
+.reg-table td {
+  text-align: left;
+  padding: 0.6rem 0.5rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.reg-table th {
+  color: var(--grey);
+  font-weight: 600;
+}
+
+/* ---------- Footer ---------- */
+
+.footer {
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.78rem;
+  color: var(--grey);
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.admin-link {
+  background: none;
+  border: none;
+  color: var(--grey);
+  text-decoration: underline;
+  font-size: 0.78rem;
+  cursor: pointer;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 520px) {
+  .field-row {
+    flex-direction: column;
+    gap: 1.4rem;
+  }
+
+  .hero {
+    padding: 3.5rem 1.25rem 2.75rem;
+  }
+
+  .reg-table {
+    font-size: 0.78rem;
+  }
+}
